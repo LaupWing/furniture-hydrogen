@@ -11,7 +11,7 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const [root] = useMatches()
    const publicStoreDomain = root?.data?.publicStoreDomain
    return (
-      <header className="container flex justify-center mx-auto py-6">
+      <header className="container flex justify-center mx-auto py-6 gap-10">
          {/* <NavLink 
             prefetch="intent" 
             to="/" 
@@ -61,8 +61,8 @@ export function HeaderMenu({
 
    function closeAside(event: React.MouseEvent<HTMLAnchorElement>) {
       if (viewport === "mobile") {
-         event.preventDefault();
-         window.location.href = event.currentTarget.href;
+         event.preventDefault()
+         window.location.href = event.currentTarget.href
       }
    }
 
