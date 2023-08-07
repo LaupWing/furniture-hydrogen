@@ -7,7 +7,9 @@ type HeaderProps = Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>;
 type Viewport = 'desktop' | 'mobile';
 
 export function Header({ header, isLoggedIn, cart }: HeaderProps) {
-   const { shop, menu } = header;
+   const { shop, menu } = header
+   const [root] = useMatches()
+   const publicStoreDomain = root?.data?.publicStoreDomain
    return (
       <header className="container flex justify-center mx-auto py-6">
          {/* <NavLink 
@@ -20,7 +22,28 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
          </NavLink> */}
          {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
          {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-         
+         {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+            if (!item.url) return null;
+
+            // if the url is internal, we strip the domain
+            const url =
+               item.url.includes("myshopify.com") ||
+                  item.url.includes(publicStoreDomain)
+                  ? new URL(item.url).pathname
+                  : item.url;
+            return (
+               <NavLink
+                  className="header-menu-item"
+                  end
+                  key={item.id}
+                  prefetch="intent"
+                  style={activeLinkStyle}
+                  to={url}
+               >
+                  {item.title}
+               </NavLink>
+            )
+         })}
       </header>
    );
 }
