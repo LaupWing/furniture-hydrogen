@@ -10,7 +10,8 @@ export default {
       extend: {
          colors: {
             main: "#f6f0ee",
-            accent: "#2f2423"
+            highlight: "#2f2423",
+            accent: "#e9e5e3"
          }
       }
    },
