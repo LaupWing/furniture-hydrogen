@@ -10,16 +10,16 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const { shop, menu } = header;
    return (
       <header className="container flex justify-center mx-auto py-6">
-         <NavLink 
+         {/* <NavLink 
             prefetch="intent" 
             to="/" 
             style={activeLinkStyle} 
             end
          >
             Home
-         </NavLink>
+         </NavLink> */}
          <HeaderMenu menu={menu} viewport="desktop" />
-         <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+         {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
       </header>
    );
 }
@@ -76,10 +76,10 @@ export function HeaderMenu({
                >
                   {item.title}
                </NavLink>
-            );
+            )
          })}
       </nav>
-   );
+   )
 }
 
 function HeaderCtas({
