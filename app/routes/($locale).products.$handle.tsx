@@ -1,8 +1,8 @@
-import {Suspense} from 'react';
-import type {V2_MetaFunction} from '@shopify/remix-oxygen';
-import {defer, redirect, type LoaderArgs} from '@shopify/remix-oxygen';
-import type {FetcherWithComponents} from '@remix-run/react';
-import {Await, Link, useLoaderData} from '@remix-run/react';
+import { Suspense } from "react"
+import type { V2_MetaFunction } from "@shopify/remix-oxygen"
+import { defer, redirect, type LoaderArgs } from '@shopify/remix-oxygen'
+import type { FetcherWithComponents } from '@remix-run/react'
+import { Await, Link, useLoaderData } from '@remix-run/react'
 import type {
   ProductFragment,
   ProductVariantsQuery,
@@ -16,17 +16,17 @@ import {
   type VariantOption,
   getSelectedProductOptions,
   CartForm,
-} from '@shopify/hydrogen';
-import type {CartLineInput} from '@shopify/hydrogen/storefront-api-types';
-import {getVariantUrl} from '~/utils';
+} from '@shopify/hydrogen'
+import type { CartLineInput } from '@shopify/hydrogen/storefront-api-types'
+import { getVariantUrl } from '~/utils'
 
-export const meta: V2_MetaFunction = ({data}) => {
-  return [{title: `Hydrogen | ${data.product.title}`}];
+export const meta: V2_MetaFunction = ({ data }) => {
+  return [{ title: `Hydrogen | ${data.product.title}` }];
 };
 
-export async function loader({params, request, context}: LoaderArgs) {
-  const {handle} = params;
-  const {storefront} = context;
+export async function loader({ params, request, context }: LoaderArgs) {
+  const { handle } = params;
+  const { storefront } = context;
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
@@ -43,8 +43,8 @@ export async function loader({params, request, context}: LoaderArgs) {
   }
 
   // await the query for the critical product data
-  const {product} = await storefront.query(PRODUCT_QUERY, {
-    variables: {handle, selectedOptions},
+  const { product } = await storefront.query(PRODUCT_QUERY, {
+    variables: { handle, selectedOptions },
   });
 
   // In order to show which variants are available in the UI, we need to query
@@ -53,11 +53,11 @@ export async function loader({params, request, context}: LoaderArgs) {
   // where variant options might show as available when they're not, but after
   // this deffered query resolves, the UI will update.
   const variants = storefront.query(VARIANTS_QUERY, {
-    variables: {handle},
+    variables: { handle },
   });
 
   if (!product?.id) {
-    throw new Response(null, {status: 404});
+    throw new Response(null, { status: 404 });
   }
 
   const firstVariant = product.variants.nodes[0];
@@ -73,10 +73,10 @@ export async function loader({params, request, context}: LoaderArgs) {
     // if no selected variant was returned from the selected options,
     // we redirect to the first variant's url with it's selected options applied
     if (!product.selectedVariant) {
-      return redirectToFirstVariant({product, request});
+      return redirectToFirstVariant({ product, request });
     }
   }
-  return defer({product, variants});
+  return defer({ product, variants });
 }
 
 function redirectToFirstVariant({
@@ -103,8 +103,8 @@ function redirectToFirstVariant({
 }
 
 export default function Product() {
-  const {product, variants} = useLoaderData<typeof loader>();
-  const {selectedVariant} = product;
+  const { product, variants } = useLoaderData<typeof loader>();
+  const { selectedVariant } = product;
   return (
     <div className="product">
       <ProductImage image={selectedVariant?.image} />
@@ -117,7 +117,7 @@ export default function Product() {
   );
 }
 
-function ProductImage({image}: {image: ProductVariantFragment['image']}) {
+function ProductImage({ image }: { image: ProductVariantFragment['image'] }) {
   if (!image) {
     return <div className="product-image" />;
   }
@@ -143,7 +143,7 @@ function ProductMain({
   selectedVariant: ProductFragment['selectedVariant'];
   variants: Promise<ProductVariantsQuery>;
 }) {
-  const {title, descriptionHtml} = product;
+  const { title, descriptionHtml } = product;
   return (
     <div className="product-main">
       <h1>{title}</h1>
@@ -177,7 +177,7 @@ function ProductMain({
         <strong>Description</strong>
       </p>
       <br />
-      <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
+      <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
       <br />
     </div>
   );
@@ -224,7 +224,7 @@ function ProductForm({
         options={product.options}
         variants={variants}
       >
-        {({option}) => <ProductOptions key={option.name} option={option} />}
+        {({ option }) => <ProductOptions key={option.name} option={option} />}
       </VariantSelector>
       <br />
       <AddToCartButton
@@ -235,11 +235,11 @@ function ProductForm({
         lines={
           selectedVariant
             ? [
-                {
-                  merchandiseId: selectedVariant.id,
-                  quantity: 1,
-                },
-              ]
+              {
+                merchandiseId: selectedVariant.id,
+                quantity: 1,
+              },
+            ]
             : []
         }
       >
@@ -249,12 +249,12 @@ function ProductForm({
   );
 }
 
-function ProductOptions({option}: {option: VariantOption}) {
+function ProductOptions({ option }: { option: VariantOption }) {
   return (
     <div className="product-options" key={option.name}>
       <h5>{option.name}</h5>
       <div className="product-options-grid">
-        {option.values.map(({value, isAvailable, isActive, to}) => {
+        {option.values.map(({ value, isAvailable, isActive, to }) => {
           return (
             <Link
               className="product-options-item"
@@ -292,7 +292,7 @@ function AddToCartButton({
   onClick?: () => void;
 }) {
   return (
-    <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
+    <CartForm route="/cart" inputs={{ lines }} action={CartForm.ACTIONS.LinesAdd}>
       {(fetcher: FetcherWithComponents<any>) => (
         <>
           <input
