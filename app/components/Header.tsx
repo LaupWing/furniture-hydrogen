@@ -18,8 +18,9 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
          >
             Home
          </NavLink> */}
-         <HeaderMenu menu={menu} viewport="desktop" />
+         {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
          {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
+         
       </header>
    );
 }
@@ -28,12 +29,12 @@ export function HeaderMenu({
    menu,
    viewport,
 }: {
-   menu: HeaderProps['header']['menu'];
-   viewport: Viewport;
+   menu: HeaderProps["header"]["menu"]
+   viewport: Viewport
 }) {
-   const [root] = useMatches();
-   const publicStoreDomain = root?.data?.publicStoreDomain;
-   const className = `header-menu-${viewport}`;
+   const [root] = useMatches()
+   const publicStoreDomain = root?.data?.publicStoreDomain
+   const className = `header-menu-${viewport}`
 
    function closeAside(event: React.MouseEvent<HTMLAnchorElement>) {
       if (viewport === "mobile") {
