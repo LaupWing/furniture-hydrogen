@@ -10,14 +10,14 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const { shop, menu } = header;
    return (
       <header className="container flex justify-center mx-auto py-6">
-         <NavLink 
+         {/* <NavLink 
             prefetch="intent" 
             to="/" 
             style={activeLinkStyle} 
             end
          >
             <strong>{shop.name}</strong>
-         </NavLink>
+         </NavLink> */}
          <HeaderMenu menu={menu} viewport="desktop" />
          <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
       </header>
