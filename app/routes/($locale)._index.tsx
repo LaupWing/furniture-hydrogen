@@ -26,11 +26,11 @@ export default function Homepage() {
    return (
       <div className="home">
          <div className="container px-6 flex flex-col mx-auto">
-            <div className="flex w-full mx-auto">
+            <div className="flex w-full mx-auto h-screen">
                <div className="w-1/2">
 
                </div>
-               <div className="w-[1.5px] bg-red-500"></div>
+               <div className="w-[1.5px] bg-gray-400"></div>
                <div className="w-1/2">
                   <FeaturedCollection collection={data.featuredCollection} />
                </div>
