@@ -2,9 +2,9 @@ import { Await, NavLink, useMatches } from '@remix-run/react';
 import { Suspense } from 'react';
 import type { LayoutProps } from './Layout';
 
-type HeaderProps = Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>;
+type HeaderProps = Pick<LayoutProps, "header" | "cart" | "isLoggedIn">
 
-type Viewport = 'desktop' | 'mobile';
+type Viewport = "desktop" | "mobile"
 
 export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const { shop, menu } = header
