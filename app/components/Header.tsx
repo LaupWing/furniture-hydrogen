@@ -11,7 +11,7 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const [root] = useMatches()
    const publicStoreDomain = root?.data?.publicStoreDomain
    return (
-      <header className="container flex justify-end px-6 fixed top-0 z-50 font-bold mx-auto py-6 gap-10">
+      <header className="container flex justify-end px-6 fixed top-0 z-50 font-bold mx-auto py-6">
          {/* <NavLink 
             prefetch="intent" 
             to="/" 
@@ -22,29 +22,30 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
          </NavLink> */}
          {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
          {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-         
-         {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-            if (!item.url) return null;
+         <nav className="flex gap-10 px-10">
+            {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+               if (!item.url) return null;
 
-            // if the url is internal, we strip the domain
-            const url =
-               item.url.includes("myshopify.com") ||
-                  item.url.includes(publicStoreDomain)
-                  ? new URL(item.url).pathname
-                  : item.url;
-            return (
-               <NavLink
-                  className="header-menu-item"
-                  end
-                  key={item.id}
-                  prefetch="intent"
-                  style={activeLinkStyle}
-                  to={url}
-               >
-                  {item.title}
-               </NavLink>
-            )
-         })}
+               // if the url is internal, we strip the domain
+               const url =
+                  item.url.includes("myshopify.com") ||
+                     item.url.includes(publicStoreDomain)
+                     ? new URL(item.url).pathname
+                     : item.url;
+               return (
+                  <NavLink
+                     className="header-menu-item"
+                     end
+                     key={item.id}
+                     prefetch="intent"
+                     style={activeLinkStyle}
+                     to={url}
+                  >
+                     {item.title}
+                  </NavLink>
+               )
+            })}
+         </nav> 
       </header>
    );
 }
