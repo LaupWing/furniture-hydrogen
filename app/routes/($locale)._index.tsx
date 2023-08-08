@@ -30,6 +30,7 @@ export default function Homepage() {
                <div className="w-1/2">
                   <FeaturedCollection collection={data.featuredCollection} />
                </div>
+               <div className="w-1 bg-red-500"></div>
                <div>
 
                </div>
@@ -56,7 +57,7 @@ function FeaturedCollection({
                <Image data={image} sizes="100vw" />
             </div>
          )}
-         <h1>{collection.title}</h1>
+         {/* <h1>{collection.title}</h1> */}
       </Link>
    );
 }
