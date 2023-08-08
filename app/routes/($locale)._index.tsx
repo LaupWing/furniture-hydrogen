@@ -27,12 +27,11 @@ export default function Homepage() {
       <div className="home">
          <div className="container px-6 flex flex-col mx-auto">
             <div className="flex w-full mx-auto h-screen">
-               <div className="w-1/2 bg-accent">
-
-               </div>
-               <div className="w-[1.5px] bg-gray-400"></div>
-               <div className="w-1/2 bg-main">
+               <div className="w-1/2 bg-main border-x border-gray-300">
                   {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+               </div>
+               <div className="w-1/2 bg-accent border-x border-transparent">
+
                </div>
             </div>
             <RecommendedProducts products={data.recommendedProducts} />
