@@ -25,8 +25,15 @@ export default function Homepage() {
    const data = useLoaderData<typeof loader>();
    return (
       <div className="home">
-         <div className="container mx-auto">
-            <FeaturedCollection collection={data.featuredCollection} />
+         <div className="container px-6 flex flex-col mx-auto">
+            <div className="flex w-full mx-auto">
+               <div className="w-1/2">
+                  <FeaturedCollection collection={data.featuredCollection} />
+               </div>
+               <div>
+
+               </div>
+            </div>
             <RecommendedProducts products={data.recommendedProducts} />
          </div>
       </div>
