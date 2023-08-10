@@ -13,9 +13,9 @@ export default {
             highlight: "#2f2423",
             accent: "#e9e5e3"
          },
-         gridColumn: {
-            "span-16": "span 16 / span 16",
-          }
+         gridTemplateColumns: {
+            "16": "repeat(16, minmax(0, 1fr))",
+         }
       }
    },
    plugins: [
