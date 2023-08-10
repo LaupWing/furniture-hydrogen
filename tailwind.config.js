@@ -12,7 +12,10 @@ export default {
             main: "#f6f0ee",
             highlight: "#2f2423",
             accent: "#e9e5e3"
-         }
+         },
+         gridColumn: {
+            "span-16": "span 16 / span 16",
+          }
       }
    },
    plugins: [
