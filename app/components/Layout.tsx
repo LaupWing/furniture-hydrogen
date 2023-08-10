@@ -31,7 +31,11 @@ export function Layout({
 }: LayoutProps) {
    return (
       <div className="bg-main grid grid-cols-16">
-         <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
+         <Header 
+            header={header} 
+            cart={cart} 
+            isLoggedIn={isLoggedIn} 
+         />
          <div className="col-span-2 bg-green-200"></div>
          <main className="col-span-12 bg-red-200">
             {children}
