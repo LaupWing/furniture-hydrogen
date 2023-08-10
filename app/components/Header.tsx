@@ -11,7 +11,7 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
    const [root] = useMatches()
    const publicStoreDomain = root?.data?.publicStoreDomain
    return (
-      <header className="container flex justify-end px-6 fixed top-0 z-50 font-bold mx-auto py-6">
+      <header className="container grid grid-cols-12 px-6 fixed top-0 z-50 font-bold mx-auto py-6">
          {/* <NavLink 
             prefetch="intent" 
             to="/" 
@@ -22,7 +22,8 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
          </NavLink> */}
          {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
          {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-         <nav className="flex gap-10 px-10">
+         <div className="col-span-6"></div>
+         <nav className="flex col-span-4 gap-10 px-10">
             {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
                if (!item.url) return null;
 
