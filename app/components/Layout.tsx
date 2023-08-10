@@ -40,7 +40,14 @@ export function Layout({
          <main className="col-span-12 ">
             {children}
          </main>
-         <div className="col-span-2 "></div>
+         <div 
+            className="col-span-2"
+            style={{
+               backgroundImage: "url('https://c8.alamy.com/comp/C00JXF/high-resolution-vertical-panorama-of-interior-of-james-r-thompson-C00JXF.jpg')",
+               backgroundSize: "cover",
+               backgroundPosition: "center"
+            }}
+         ></div>
          {/* <CartAside cart={cart} />
          <SearchAside />
          <MobileMenuAside menu={header.menu} />
@@ -92,7 +99,7 @@ function SearchAside() {
             <PredictiveSearchResults />
          </div>
       </Aside>
-   );
+   )
 }
 
 function MobileMenuAside({ menu }: { menu: HeaderQuery['menu'] }) {
@@ -100,5 +107,5 @@ function MobileMenuAside({ menu }: { menu: HeaderQuery['menu'] }) {
       <Aside id="mobile-menu-aside" heading="MENU">
          <HeaderMenu menu={menu} viewport="mobile" />
       </Aside>
-   );
+   )
 }
