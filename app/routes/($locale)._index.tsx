@@ -25,7 +25,7 @@ export default function Homepage() {
    const data = useLoaderData<typeof loader>();
    return (
       <div className="home">
-         <div className="container px-6 flex flex-col mx-auto">
+         <div className="flex flex-col mx-auto">
             <div className="flex w-full mx-auto h-screen">
                <div className="w-1/2 bg-main border-x border-gray-300">
                   {/* <FeaturedCollection collection={data.featuredCollection} /> */}
