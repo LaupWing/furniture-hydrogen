@@ -31,7 +31,7 @@ export function Layout({
 }: LayoutProps) {
    return (
       <div className="bg-main">
-         <CartAside cart={cart} />
+         {/* <CartAside cart={cart} />
          <SearchAside />
          <MobileMenuAside menu={header.menu} />
          <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
@@ -40,7 +40,7 @@ export function Layout({
             <Await resolve={footer}>
                {(footer) => <Footer menu={footer.menu} />}
             </Await>
-         </Suspense>
+         </Suspense> */}
       </div>
    );
 }
