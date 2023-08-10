@@ -30,7 +30,10 @@ export function Layout({
    isLoggedIn,
 }: LayoutProps) {
    return (
-      <div className="bg-main">
+      <div className="bg-main grid grid-cols-12">
+         <div className="col-span-1 bg-green-200"></div>
+         <main className="col-span-10 bg-red-200"></main>
+         <div className="col-span-1 bg-green-200"></div>
          {/* <CartAside cart={cart} />
          <SearchAside />
          <MobileMenuAside menu={header.menu} />
