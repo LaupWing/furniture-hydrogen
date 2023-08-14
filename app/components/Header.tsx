@@ -25,7 +25,7 @@
             <div className="col-span-2 flex flex-col">
                <h1 className="w-full text-center">M.S.</h1>
             </div>
-            <div className="col-span-7"></div>
+            <div className="col-span-4"></div>
             <nav className="flex col-span-4 gap-10 px-10">
                {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
                   if (!item.url) return null;
