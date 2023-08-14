@@ -33,8 +33,8 @@
                      className="aspect-square object-cover"
                   />
                </div>
-               <div className="flex-1">
-                  <h2 className="uppercase tracking-wider text-4xl transform -rotate-90 ml-auto">
+               <div className="flex-1 relative">
+                  <h2 className="uppercase absolute top-0 tracking-wider text-4xl transform -rotate-90 ml-auto">
                      Armchair
                   </h2>
                </div>
