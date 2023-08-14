@@ -11,7 +11,7 @@
       const [root] = useMatches()
       const publicStoreDomain = root?.data?.publicStoreDomain
       return (
-         <header className="col-span-full grid grid-cols-16 fixed top-0 z-50 font-bold mx-auto py-6">
+         <header className="col-span-full grid grid-cols-16 fixed top-0 z-50 font-bold mx-auto">
             {/* <NavLink 
                prefetch="intent" 
                to="/" 
@@ -22,11 +22,11 @@
             </NavLink> */}
             {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
             {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-            <div className="col-span-2 flex flex-col">
+            <div className="col-span-2 flex flex-col h-screen py-6">
                <h1 className="w-full text-center">M.S.</h1>
             </div>
             <div className="col-span-4"></div>
-            <nav className="flex col-span-4 gap-10 px-10">
+            <nav className="flex col-span-4 gap-10 px-10  py-6">
                {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
                   if (!item.url) return null;
 
