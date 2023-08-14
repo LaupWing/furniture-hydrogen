@@ -23,11 +23,12 @@
             {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
             {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
             <div className="col-span-2 flex flex-col h-screen py-6">
-               <h1 className="w-full text-center">M.S.</h1>
-               <div>
+               <h1 className="w-full text-center text-2xl">M.S.</h1>
+               <div className="flex flex-col justify-around flex-1">
                   <img 
                      src="https://mydeerartshop.nl/cdn/shop/products/Sunbrella_cushion_outdoor_1200x.png?v=1648209842" 
                      alt="" 
+                     className="aspect-square object-cover"
                   />
                </div>
             </div>
