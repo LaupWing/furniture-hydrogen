@@ -22,7 +22,8 @@ export function Header({ header, isLoggedIn, cart }: HeaderProps) {
          </NavLink> */}
          {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
          {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-         <div className="col-span-8"></div>
+         <div className="col-span-2">Test</div>
+         <div className="col-span-7"></div>
          <nav className="flex col-span-4 gap-10 px-10">
             {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
                if (!item.url) return null;
