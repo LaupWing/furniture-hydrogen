@@ -27,9 +27,12 @@
                <div className="flex flex-col justify-around flex-1">
                   <img 
                      src="https://mydeerartshop.nl/cdn/shop/products/Sunbrella_cushion_outdoor_1200x.png?v=1648209842" 
-                     alt="" 
+                     alt="Chair" 
                      className="aspect-square object-cover"
                   />
+                  <h2>
+                     Armchair
+                  </h2>
                </div>
             </div>
             <div className="col-span-4"></div>
