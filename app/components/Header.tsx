@@ -11,7 +11,7 @@
       const [root] = useMatches()
       const publicStoreDomain = root?.data?.publicStoreDomain
       return (
-         <header className="col-span-full grid grid-cols-16 px-6 fixed top-0 z-50 font-bold mx-auto py-6">
+         <header className="col-span-full grid grid-cols-16 fixed top-0 z-50 font-bold mx-auto py-6">
             {/* <NavLink 
                prefetch="intent" 
                to="/" 
@@ -22,8 +22,8 @@
             </NavLink> */}
             {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
             {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
-            <div className="col-span-2">
-               <h1>M.S.</h1>
+            <div className="col-span-2 flex flex-col">
+               <h1 className="w-full text-center">M.S.</h1>
             </div>
             <div className="col-span-7"></div>
             <nav className="flex col-span-4 gap-10 px-10">
