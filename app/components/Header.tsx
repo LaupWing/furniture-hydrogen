@@ -24,6 +24,11 @@
             {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
             <div className="col-span-2 flex flex-col h-screen py-6">
                <h1 className="w-full text-center">M.S.</h1>
+
+               <img 
+                  src="https://i.pinimg.com/originals/be/6d/cc/be6dcc2acfa4c585d59609b60e8907d4.png" 
+                  alt="" 
+               />
             </div>
             <div className="col-span-4"></div>
             <nav className="flex col-span-4 gap-10 px-10  py-6">
