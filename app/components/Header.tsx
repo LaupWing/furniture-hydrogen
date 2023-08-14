@@ -30,7 +30,7 @@
                      alt="Chair" 
                      className="aspect-square object-cover"
                   />
-                  <h2>
+                  <h2 className="uppercase tracking-wider text-4xl transform -rotate-90 ml-auto">
                      Armchair
                   </h2>
                </div>
