@@ -23,7 +23,7 @@
             {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
             {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
             <div className="col-span-2 flex flex-col h-screen py-6">
-               <div className="flex-">
+               <div className="flex-1">
                   <h1 className="w-full text-center text-2xl">M.S.</h1>
                </div>
                <div className="flex flex-col justify-around flex-1">
@@ -32,6 +32,8 @@
                      alt="Chair" 
                      className="aspect-square object-cover"
                   />
+               </div>
+               <div className="flex-1">
                   <h2 className="uppercase tracking-wider text-4xl transform -rotate-90 ml-auto">
                      Armchair
                   </h2>
